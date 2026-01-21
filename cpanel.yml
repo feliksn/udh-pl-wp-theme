@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/xappsqsm/public_html/udh-pl/wp-content/themes
+    - export REPONAME=basename $PWD
+    - /bin/rm -R $DEPLOYPATH/$REPONAME
+    - /bin/cp -R ../$REPONAME $DEPLOYPATH
+    - /bin/rm -R $DEPLOYPATH/$REPONAME/.git
+    - /bin/rm -R $DEPLOYPATH/$REPONAME/tmp
+    - /bin/rm $DEPLOYPATH/$REPONAME/.gitignore
