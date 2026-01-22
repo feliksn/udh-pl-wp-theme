@@ -15,7 +15,7 @@
 		<?php } ?>
 	<?php } else { ?>
 		
-		<h4>Nothig was found!</h4>
+		<h4>Niczego nie odnależiono!</h4>
 	
 	<?php } ?>
 </div>
