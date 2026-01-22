@@ -3,7 +3,7 @@ deployment:
   tasks:
     - export DEPLOY=/home/xappsqsm/public_html/udh-pl/wp-content/themes
     - export REPO=$(basename $PWD)
-    - rsync -arzu --delete $PWD $DEPLOY
+    - rsync -rzu --delete $PWD $DEPLOY
     - rm -rf $DEPLOY/$REPO/.git 
     - rm $DEPLOY/$REPO/.gitignore
     - rm $DEPLOY/$REPO/.cpanel.yml
