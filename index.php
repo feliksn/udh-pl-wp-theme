@@ -9,7 +9,7 @@
 			<div id="post-<?php the_ID(); ?>" <?php post_class('col'); ?>>
                 <?php the_title('<h3>', '</h3>'); ?>
                 <?php the_excerpt(); ?>
-                <a href="<?php the_permalink(); ?>">Read more...</a>
+                <a href="<?php the_permalink(); ?>">More...</a>
 			</div>
 
 		<?php } ?>
