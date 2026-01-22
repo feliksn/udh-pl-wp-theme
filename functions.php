@@ -1,83 +1,6 @@
 <?php
-// Add a composer packages path
-include_once 'vendor/autoload.php';
-use simplehtmldom\HtmlDocument;
-const PARSER = new HtmlDocument();
-
-// Display data in the var
-function showVarData( $var ){
-    echo "<pre>" . print_r( $var, true ) . "</pre>";
-}
-
-// Get a parsed content from WP function
-function getParsedContent(){
-	return PARSER->load( get_the_content() );
-}
-
-// Get a category an a subcategory from a product
-function getCategories(){
-	foreach( get_the_category() as $category){
-		if( $category->parent == 0) $categories['category'] = $category;			
-		else						$categories['subcategory'] = $category;
-	}
-	return $categories;
-}
-
-// Get an image url from parsed html <table> in a <tr> tag
-function getImageUrlFromTd( $tr, $td_index, $size='thumbnail' ){
-	$img = $tr->find( 'td', $td_index )->find( 'img', 0 );
-	if($img){
-		$img_id  = str_replace( 'wp-image-', '', $img->class );
-		$img_url = wp_get_attachment_image_url( $img_id, $size );
-		return $img_url;
-	}
-}
-
-// Get brand data from a parsed content using a brand wp pattern
-function getBrand(){
-	$parsedContent		= getParsedContent();
-	$brand['description']= $parsedContent->find( "#brand_description", 0 )->outertext;
-	$brand_images		= $parsedContent->find( '#brand_images tbody tr', 0 );
-	$brand['logo_url']  = getImageUrlFromTd( $brand_images, 0 );
-	$brand['image_url'] = getImageUrlFromTd( $brand_images, 1, 'medium' );
-	$brand['cover_url'] = getImageUrlFromTd( $brand_images, 2, 'full' );
-	return $brand;
-}
-
-// Get product data from a parsed content using a product wp pattern
-function getProduct(){
-	$categories 			= getCategories();
-	$product['category'] 	= $categories['category'];
-	$product['subcategory'] = $categories['subcategory'];
-	$parsedContent 			= getParsedContent();
-	$product['description'] = $parsedContent->find( "#product_description", 0 )->outertext; 
-	$product_contents 		= $parsedContent->find( '#product_contents tbody tr', 0 );
-	$product['content_1'] 	= $product_contents->find( 'td', 0 );
-	$product['content_2'] 	= $product_contents->find( 'td', 1 );
-	$product_volumes 		= $parsedContent->find( '#product_volumes tbody tr' );
-	foreach( $product_volumes as $product_volume ){
-		$product['volumes'][] = [
-			'single_image_url'  => getImageUrlFromTd( $product_volume, 0, 'medium_large' ),
-			'image_type'        => $product_volume->find( 'td', 1 ),
-			'pack_image_url'    => getImageUrlFromTd( $product_volume, 2, 'medium' ),
-			'pallete_image_url' => getImageUrlFromTd( $product_volume, 3, 'medium' ),
-			'shape_type'        => $product_volume->find( 'td', 4 ),
-			'volume_val'        => $product_volume->find( 'td', 5 ),
-			'pcs_in_pack'       => $product_volume->find( 'td', 6 ),
-			'pcs_on_pallete'    => $product_volume->find( 'td', 7 ),
-			'thubmnail_height'  => $product_volume->find( 'td', 8 )
-		];	
-	}
-	$product['image_url'] = $product['volumes'][0]['single_image_url'];
-	return $product;
-}
-
-// Get post data by post type
-function getPost(){
-	$post_type = get_post_type();
-	if( $post_type == 'brand' ) return getBrand();
-	if( $post_type == 'product' ) return getProduct();
-}
+// Add custom functions
+require_once 'functions-custom.php';
 
 // Add a menu in an admin panel
 add_theme_support("menus");
@@ -106,13 +29,14 @@ function filter_nav_menu_link_attributes( $atts ) {
 add_action('wp_enqueue_scripts', 'add_scripts');
 function add_scripts() {
 	// Theme sytles
-	wp_enqueue_style( 'bs', get_template_directory_uri() .'/lib/bootstrap/bootstrap.min.css' );
+	// BS version 5.3.3
+	wp_enqueue_style( 'bs'      , get_template_directory_uri() . '/lib/bootstrap/bootstrap.min.css'       );
 	wp_enqueue_style( 'bs-icons', get_template_directory_uri() . '/lib/bootstrap/bootstrap-icons.min.css' );
-	wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.css');
+	wp_enqueue_style( 'main'    , get_template_directory_uri() . '/css/main.css'                          );
 	// Theme scripts
-	wp_enqueue_script('jq', get_template_directory_uri() . '/lib/jquery/jquery-3.7.1.min.js',[],'',true);
-	wp_enqueue_script('bootstrap', get_template_directory_uri().'/lib/bootstrap/bootstrap.bundle.min.js',[],'',true);
-	wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', [], '', true);
+	wp_enqueue_script('jq'       , get_template_directory_uri() . '/lib/jquery/jquery-3.7.1.min.js'       , [], '', true);
+	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/lib/bootstrap/bootstrap.bundle.min.js', [], '', true);
+	wp_enqueue_script('main'     , get_template_directory_uri() . '/js/main.js'                           , [], '', true);
 }
 
 // Disable comments for media files
@@ -130,7 +54,6 @@ add_filter('pings_open', '__return_false', 20, 2);
 // Remove comments page in menu
 add_action('admin_menu', function () {
    remove_menu_page('edit-comments.php');
-   remove_menu_page('edit.php');
 });
 
 // Disable support for comments and trackbacks in post types
@@ -161,11 +84,11 @@ add_action('admin_init', function () {
 // Redirect any user trying to access comments page
 add_action('admin_init', 'disable_comments_admin_menu_redirect');
 function disable_comments_admin_menu_redirect() {
-   global $pagenow;
-   if ($pagenow === 'edit-comments.php') {
-       wp_redirect(admin_url());
+   	global $pagenow;
+   	if ($pagenow === 'edit-comments.php') {
+   		wp_redirect(admin_url());
 		exit;
-   }
+   	}
 }
 
 // Register custom post types
