@@ -5,4 +5,5 @@ deployment:
     - export REPO=$(basename $PWD)
     - rsync -arzu --delete $PWD $DEPLOY
     - rm -rf $DEPLOY/$REPO/.git 
-    - rm $DEPLOY/$REPO/.gitignore 
+    - rm $DEPLOY/$REPO/.gitignore
+    - rm $DEPLOY/$REPO/.cpanel.yml
