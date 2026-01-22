@@ -3,5 +3,5 @@ deployment:
   tasks:
     - export DEPLOY=/home/xappsqsm/public_html/udh-pl/wp-content/themes
     - export REPO=$(basename $PWD)
-    - if [ ! -d $DEPLOY/$REPO ] && mkdir $DEPLOY/$REPO || rm -rf $DEPLOY/$REPO
+    - [ ! -d $DEPLOY/$REPO ] && mkdir $DEPLOY/$REPO || rm -rf $DEPLOY/$REPO
     - cp -r * $DEPLOY/$REPO
