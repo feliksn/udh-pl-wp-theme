@@ -1,7 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOY=/home/xappsqsm/public_html/udh-pl/wp-content/themes
-    - export REPO=$(basename $PWD)
-    - if [ ! -d $DEPLOY/$REPO ]; then mkdir $DEPLOY/$REPO; else rm -rf $DEPLOY/$REPO; fi
-    - cp -r * $DEPLOY/$REPO
+    - export DEPLOY=/home/xappsqsm/public_html/udh-pl/wp-content/themes/udh-pl-wp-theme
+    - rsync -azru --delete $PWD $DEPLOY
