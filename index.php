@@ -5,12 +5,7 @@
 		<?php while ( have_posts() ) { ?>
 			<?php the_post(); ?>
 			
-			<!-- post item -->
-			<div id="post-<?php the_ID(); ?>" <?php post_class('col'); ?>>
-                <?php the_title('<h3>', '</h3>'); ?>
-                <?php the_excerpt(); ?>
-                <a href="<?php the_permalink(); ?>">More...</a>
-			</div>
+			<?php get_template_part('components/post/post'); ?>
 
 		<?php } ?>
 	<?php } else { ?>
