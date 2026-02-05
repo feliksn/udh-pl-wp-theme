@@ -1,5 +1,8 @@
 # temporary dir
 tmp/
 
+# github files
+.github/
+
 # Mac OS generated files
 .DS_Store
