@@ -153,4 +153,13 @@ function register_post_types(){
 }
 
 
+
+add_filter( 'the_excerpt', 'limit_excerpt_length' );
+function limit_excerpt_length( $post_excerpt ) {
+	// Ограничиваем длину отрывка 100 символами
+	return strlen($post_excerpt) > 100 ? substr( $post_excerpt, 0, 100 ) . '...' : $post_excerpt;
+}
+// фильтр, который убирает обёртку тегом <p> функцию the_excerpt()
+remove_filter('the_excerpt', 'wpautop');
+
 ?>

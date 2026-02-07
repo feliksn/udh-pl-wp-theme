@@ -1,13 +1,36 @@
-<div class="post-item">
-    <!-- .post-image -->
-    <?php the_post_thumbnail(); ?>
-    
-    <!-- .post-title -->
-    <?php the_title('<h3>', '</h3>'); ?>
-    
-    <!-- .post-excerpt -->
-    <?php the_excerpt(); ?>
 
-    <!-- .post-link -->
-    <a href="<?php the_permalink(); ?>">More...</a>
-</div>
+    <div class="post-item col-sm-6 col-md-4 col-lg-3 p-0">
+
+        <!--Задаю класс именно обертки элемента -->
+
+        <!-- .post-image -->
+        <div class="post-image">
+            <a href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail('medium'); ?>
+            </a>
+        </div>
+
+
+        <div class="post-body">
+
+            <!-- .post-title -->
+            <div class="post-title">
+                <h3>
+                    <?php the_title(); ?>
+                </h3>
+            </div>
+
+            <div class="post-excerpt">
+                <?php the_excerpt(); ?>
+            </div>
+
+            <!-- .post-link -->
+            <div class="post-link">
+                <a class="udh-green-link" href="<?php the_permalink(); ?>">
+                    zobacz wszystkie produkty
+                </a>
+            </div>
+
+        </div><!--.post-body-->
+
+    </div><!--.post-item-->

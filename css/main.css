@@ -1,1 +1,6 @@
 @import "../components/post/post.css";
+
+html{
+   font-size: 10px;
+}
+
