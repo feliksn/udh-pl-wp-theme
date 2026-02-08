@@ -25,11 +25,9 @@
             </div>
 
             <!-- .post-link -->
-            <div class="post-link">
-                <a class="udh-green-link" href="<?php the_permalink(); ?>">
-                    zobacz wszystkie produkty
-                </a>
-            </div>
+            <a class="post-link" href="<?php the_permalink(); ?>">
+                zobacz wszystkie produkty
+            </a>
 
         </div><!--.post-body-->
 
