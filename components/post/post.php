@@ -6,7 +6,7 @@
         <!-- .post-image -->
         <div class="post-image">
             <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail('medium'); ?>
+                <?php the_post_thumbnail('medium', array('class' => 'post-image')); ?>
             </a>
         </div>
 
