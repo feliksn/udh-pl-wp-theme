@@ -13,16 +13,10 @@
 
         <div class="post-body">
 
-            <!-- .post-title -->
-            <div class="post-title">
-                <h3>
-                    <?php the_title(); ?>
-                </h3>
-            </div>
+            <h3 class="post-title"><?php the_title(); ?></h3>
 
             <p class="post-excerpt"><?php the_excerpt(); ?></p>
 
-            <!-- .post-link -->
             <a class="post-link" href="<?php the_permalink(); ?>">
                 zobacz wszystkie produkty
             </a>
