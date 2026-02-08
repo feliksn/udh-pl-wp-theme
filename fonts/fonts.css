@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Regular.ttf') format('ttf')
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Medium.ttf') format('ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-SemiBold.ttf') format('ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Bold.ttf') format('ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Italic.ttf') format('ttf');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-MediumItalic.ttf') format('ttf');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-SemiBoldItalic.ttf') format('ttf');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-BoldItalic.ttf') format('ttf');
+    font-weight: 700;
+    font-style: italic;
+}
