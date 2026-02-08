@@ -1,6 +1,13 @@
 @import "../fonts/fonts.css";
 @import "../components/post/post.css";
 
+:root{
+   --color-brand: #4e7b00;
+   --color-brand-light: #609202;
+   --color-text: #646464;
+   --ff-lb: 'Libre Baskerville', serif;
+}
+
 html{
    font-size: 10px;
 }
