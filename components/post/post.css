@@ -33,13 +33,6 @@
     cursor: pointer;
 }
 
-.post-excerpt{
-    font-size: 1.3em;
-    color: #646464;
-    line-height: 1.4em;
-    user-select: none;
-}
-
 .post-link{
     font-style: italic;
     color: var(--color-brand);
