@@ -41,13 +41,7 @@
 }
 
 .post-link{
-    margin-top: auto;   
-}
-
-.udh-green-link{
-    font-size: calc(1.2rem + 0.5vw);
     font-style: italic;
-    color: #609202;
-    font-weight: 400;
-    font-family: 'Libre Baskerville', serif;
+    color: var(--color-brand);
+    font-family:var(--ff-lb);
 }
