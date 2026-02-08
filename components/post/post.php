@@ -20,9 +20,7 @@
                 </h3>
             </div>
 
-            <div class="post-excerpt">
-                <?php the_excerpt(); ?>
-            </div>
+            <p class="post-excerpt"><?php the_excerpt(); ?></p>
 
             <!-- .post-link -->
             <a class="post-link" href="<?php the_permalink(); ?>">
