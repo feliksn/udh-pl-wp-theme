@@ -1,10 +1,8 @@
 
     <div class="post-item">
 
-        <!--Задаю класс именно обертки элемента -->
-
         <!-- .post-image -->
-        <div class="post-image">
+        <div class="overflow-hidden">
             <a href="<?php the_permalink(); ?>">
                 <?php the_post_thumbnail('medium', array('class' => 'post-image')); ?>
             </a>
