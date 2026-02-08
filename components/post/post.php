@@ -1,5 +1,5 @@
 
-    <div class="post-item col-sm-6 col-md-4 col-lg-3 p-0">
+    <div class="post-item">
 
         <!--Задаю класс именно обертки элемента -->
 
