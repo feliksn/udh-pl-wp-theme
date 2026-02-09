@@ -23,4 +23,5 @@ html{
 
 body{
    color: var(--color-text);
+   font-family: var(--ff-pn);
 }
