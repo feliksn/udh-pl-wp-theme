@@ -1,23 +1,19 @@
 .post-item{
-    max-height: 620px;
-    max-width: 384px;
     display: flex;
     flex-direction: column;
 }
 
 .post-image{
-    cursor: pointer;
-    overflow: hidden;
+    width: 100%;
+    height: auto
 }
 
-.post-image > a > img{
-    max-width: 100%;
-    height: auto;
+.post-image{
     transition: transform 0.3s ease;
     transform: scale(1);
 }
 
-.post-image > a > img:hover{
+.post-item:hover .post-image{
     transform: scale(1.1);
 }
 
@@ -25,16 +21,6 @@
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
-    gap: 1.2rem;
-    padding: 1.5rem;
-}
-
-.post-title{
-    cursor: pointer;
-}
-
-.post-link{
-    font-style: italic;
-    color: var(--color-brand);
-    font-family:var(--ff-lb);
+    gap: 1rem;
+    padding: 1rem;
 }
