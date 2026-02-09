@@ -13,7 +13,7 @@
         <p class="mb-0"><?php the_excerpt(); ?></p>
         <!-- .stretched-link - нужен для того, чтобы весь блок был кликабельным, а не только картинка и заголовок. Это такой трюк bootstrap с помощью которого можно сделать кликабельным весь блок с помощью одной ссылки -->
         <!-- .link - это класс для стилизации всех ссылок, который будет использоваться не только для записи. Определен в elements/link/link.css -->
-        <a class="link stretched-link mt-0" href="<?php the_permalink(); ?>">
+        <a class="link stretched-link mt-auto" href="<?php the_permalink(); ?>">
             zobacz wszystkie produkty
         </a>
     </div><!--.post-body-->
