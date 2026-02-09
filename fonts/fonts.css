@@ -1,49 +1,109 @@
+/* Libre Baskerville - это шрифт с засечками, который был разработан в 2011 году. Он основан на оригинальном шрифте Baskerville, который был создан в 1757 году Джоном Баскервилем. Libre Baskerville был разработан для использования в веб-дизайне и печати, и он поддерживает широкий диапазон языков и символов. */
 @font-face {
     font-family: 'Libre Baskerville';
-    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Regular.ttf') format('ttf')
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Italic.eot') format('embedded-opentype');
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Italic.eot#iefix') format('embedded-opentype'),
+        url('../fonts/Libre_Baskerville/static/LibreBaskerville-Italic.woff2') format('woff2'),
+        url('../fonts/Libre_Baskerville/static/LibreBaskerville-Italic.woff') format('woff'),
+        url('../fonts/Libre_Baskerville/static/LibreBaskerville-Italic.ttf') format('truetype'),
+        url('../fonts/Libre_Baskerville/static/LibreBaskerville-Italic.svg#LibreBaskerville-Italic') format('svg');
+    font-style: italic;
 }
 
 @font-face {
     font-family: 'Libre Baskerville';
-    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Medium.ttf') format('ttf');
-    font-weight: 500;
-}
-
-@font-face {
-    font-family: 'Libre Baskerville';
-    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-SemiBold.ttf') format('ttf');
-    font-weight: 600;
-}
-
-@font-face {
-    font-family: 'Libre Baskerville';
-    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Bold.ttf') format('ttf');
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Bold.eot') format('embedded-opentype');
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Bold.eot#iefix') format('embedded-opentype'),
+        url('../fonts/Libre_Baskerville/static/LibreBaskerville-Bold.woff2') format('woff2'),
+        url('../fonts/Libre_Baskerville/static/LibreBaskerville-Bold.woff') format('woff'),
+        url('../fonts/Libre_Baskerville/static/LibreBaskerville-Bold.ttf') format('truetype'),
+        url('../fonts/Libre_Baskerville/static/LibreBaskerville-Bold.svg#LibreBaskerville-Bold') format('svg');
     font-weight: 700;
 }
 
 @font-face {
     font-family: 'Libre Baskerville';
-    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Italic.ttf') format('ttf');
-    font-style: italic;
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Regular.eot') format('embedded-opentype');
+    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-Regular.eot#iefix') format('embedded-opentype'),
+        url('../fonts/Libre_Baskerville/static/LibreBaskerville-Regular.woff2') format('woff2'),
+        url('../fonts/Libre_Baskerville/static/LibreBaskerville-Regular.woff') format('woff'),
+        url('../fonts/Libre_Baskerville/static/LibreBaskerville-Regular.ttf') format('truetype'),
+        url('../fonts/Libre_Baskerville/static/LibreBaskerville-Regular.svg#LibreBaskerville-Regular') format('svg');
+}
+
+/* Proxima Nova - это шрифт без засечек, который был разработан в 2005 году Марком Саймономсон. Он был создан для использования в веб-дизайне и печати, и он поддерживает широкий диапазон языков и символов. Proxima Nova имеет современный и чистый дизайн, который делает его популярным выбором для многих дизайнеров. */
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Proxima_Nova/Proxima-Nova-Regular-webfont.eot') format('embedded-opentype');
+    src: url('../fonts/Proxima_Nova/Proxima-Nova-Regular-webfont.eot#iefix') format('embedded-opentype'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Regular-webfont.woff2') format('woff2'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Regular-webfont.woff') format('woff'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Regular-webfont.ttf') format('truetype'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Regular-webfont.svg#ProximaNova-Regular') format('svg');
 }
 
 @font-face {
-    font-family: 'Libre Baskerville';
-    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-MediumItalic.ttf') format('ttf');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Libre Baskerville';
-    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-SemiBoldItalic.ttf') format('ttf');
-    font-weight: 600;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Libre Baskerville';
-    src: url('../fonts/Libre_Baskerville/static/LibreBaskerville-BoldItalic.ttf') format('ttf');
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Proxima_Nova/Proxima-Nova-Bold-webfont.eot') format('embedded-opentype');
+    src: url('../fonts/Proxima_Nova/Proxima-Nova-Bold-webfont.eot#iefix') format('embedded-opentype'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Bold-webfont.woff2') format('woff2'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Bold-webfont.woff') format('woff'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Bold-webfont.ttf') format('truetype'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Bold-webfont.svg#ProximaNova-Bold') format('svg');
     font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Proxima_Nova/Proxima-Nova-Italic-webfont.eot') format('embedded-opentype');
+    src: url('../fonts/Proxima_Nova/Proxima-Nova-Italic-webfont.eot#iefix') format('embedded-opentype'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Italic-webfont.woff2') format('woff2'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Italic-webfont.woff') format('woff'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Italic-webfont.ttf') format('truetype'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Italic-webfont.svg#ProximaNova-Italic') format('svg');
     font-style: italic;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Proxima_Nova/Proxima-Nova-Light-webfont.eot') format('embedded-opentype');
+    src: url('../fonts/Proxima_Nova/Proxima-Nova-Light-webfont.eot#iefix') format('embedded-opentype'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Light-webfont.woff2') format('woff2'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Light-webfont.woff') format('woff'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Light-webfont.ttf') format('truetype'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-Light-webfont.svg#ProximaNova-Light') format('svg');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Proxima_Nova/Proxima-Nova-SemiBold-webfont.eot') format('embedded-opentype');
+    src: url('../fonts/Proxima_Nova/Proxima-Nova-SemiBold-webfont.eot#iefix') format('embedded-opentype'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-SemiBold-webfont.woff2') format('woff2'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-SemiBold-webfont.woff') format('woff'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-SemiBold-webfont.ttf') format('truetype'),
+        url('../fonts/Proxima_Nova/Proxima-Nova-SemiBold-webfont.svg#ProximaNova-SemiBold') format('svg');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/Proxima_Nova/ProximaNova-Thin-webfont.eot') format('embedded-opentype');
+    src: url('../fonts/Proxima_Nova/ProximaNova-Thin-webfont.eot#iefix') format('embedded-opentype'),
+        url('../fonts/Proxima_Nova/ProximaNova-Thin-webfont.woff2') format('woff2'),
+        url('../fonts/Proxima_Nova/ProximaNova-Thin-webfont.woff') format('woff'),
+        url('../fonts/Proxima_Nova/ProximaNova-Thin-webfont.ttf') format('truetype'),
+        url('../fonts/Proxima_Nova/ProximaNova-Thin-webfont.svg#ProximaNova-Thin') format('svg');
+    font-weight: 900;
+}
+
+/* Myriad Pro - это шрифт без засечек, который был разработан в 1992 году Робертом Слимбахом и Каролин Грейвсом. Он был создан для использования в печати и веб-дизайне, и он поддерживает широкий диапазон языков и символов. Myriad Pro имеет современный и чистый дизайн, который делает его популярным выбором для многих дизайнеров. */
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('../fonts/Myriad_Pro/MyriadPro-Regular.eot') format('embedded-opentype');
+    src: url('../fonts/Myriad_Pro/MyriadPro-Regular.eot#iefix') format('embedded-opentype'),
+        url('../fonts/Myriad_Pro/MyriadPro-Regular.woff2') format('woff2'),
+        url('../fonts/Myriad_Pro/MyriadPro-Regular.woff') format('woff'),
+        url('../fonts/Myriad_Pro/MyriadPro-Regular.ttf') format('truetype'),
+        url('../fonts/Myriad_Pro/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg');
 }
