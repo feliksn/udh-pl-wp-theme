@@ -171,5 +171,8 @@ function disable_image_sizes($sizes){
 }
 add_action('intermediate_image_sizes_advanced', 'disable_image_sizes');
 
-
+// Ограничение максимального размера изображений до 1536 пикселей.
+add_filter( 'big_image_size_threshold', function( $size, $imagesize, $file, $attachment_id ){
+	return 1536;
+}, 10, 4 );
 ?>
