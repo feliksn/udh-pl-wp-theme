@@ -1,0 +1,10 @@
+.link{
+   color: var(--color-brand);
+   text-decoration: none;
+   font-family: 'Libre Baskerville';
+   font-style: italic;
+}
+
+.link:hover{
+   text-decoration: underline;
+}
