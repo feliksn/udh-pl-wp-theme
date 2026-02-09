@@ -162,4 +162,14 @@ function limit_excerpt_length( $post_excerpt ) {
 // фильтр, который убирает обёртку тегом <p> функцию the_excerpt()
 remove_filter('the_excerpt', 'wpautop');
 
+// Отключаем генерацию некоторых размеров изображений, которые не нужны для нашего сайта. Это поможет сэкономить место на сервере и ускорить загрузку страниц.
+function disable_image_sizes($sizes){
+	unset($sizes['medium_large']); // disable medium-large size
+	unset($sizes['1536x1536']);    // disable 2x medium-large size
+	unset($sizes['2048x2048']);    // disable 2x large size
+	return $sizes;
+}
+add_action('intermediate_image_sizes_advanced', 'disable_image_sizes');
+
+
 ?>
