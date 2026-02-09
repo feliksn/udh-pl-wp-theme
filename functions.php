@@ -145,8 +145,8 @@ function register_post_types(){
 		'menu_position'       => 6,
 		'menu_icon'           => null,
 		'hierarchical'        => false,
-		'supports'            => array('title', 'editor', 'page-attributes'),
-		'taxonomies'          => [ 'category', 'post_tag' ],
+		'supports'            => array('title', 'editor', 'page-attributes', 'thumbnail'),
+		'taxonomies'          => [ 'category' ],
 		'has_archive'         => true,
 		'rewrite'             => true,
 	] );
