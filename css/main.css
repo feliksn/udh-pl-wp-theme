@@ -1,4 +1,10 @@
 @import "../fonts/fonts.css";
+
+/* elements */
+@import "../elements/heading/heading.css";
+@import "../elements/link/link.css";
+
+/* components */
 @import "../components/post/post.css";
 
 :root{
