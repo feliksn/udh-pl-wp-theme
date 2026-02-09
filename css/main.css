@@ -12,9 +12,9 @@
    --color-brand-light: #609202;
    --color-text: #646464;
    --color-heading: #313131;
-   --ff-lb: 'Libre Baskerville';
-   --ff-pn: 'Proxima Nova';
-   --ff-mp: 'Myriad Pro';
+   --ff-lb: 'Libre Baskerville', serif;
+   --ff-pn: 'Proxima Nova', sans-serif;
+   --ff-mp: 'Myriad Pro', sans-serif;
 }
 
 html{
