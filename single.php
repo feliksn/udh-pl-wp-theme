@@ -1,22 +1,24 @@
 <?php get_header(); ?>
 
+<!-- Рекомендация: использовать функцию the_title() внутри цикла, а для заголовка страницы использовать single_post_title() вне цикла. -->
 
-<!--название записи-->
-<?php single_post_title(); ?> || 
+<!-- Название Записи пределами цикла -->
+<?php single_post_title(); ?>
 
-<!--или-->
-
-<?php the_title() ?>
-
-<hr/>
-
-
-<!--миниатюра (размер миниатюры - thumbnail)-->
-<?php the_post_thumbnail('thumbnail'); ?>
-
-<!--контент записи ( то что в редакторе написано )-->
-<?php the_content()?>
-
+<?php if( have_posts() ) { ?>
+    <?php while( have_posts() ) { ?>
+        <?php the_post(); ?>
+        
+        <!--миниатюра (размер миниатюры - thumbnail)-->
+        <?php the_post_thumbnail('thumbnail'); ?>
+        
+        <!-- Название записи внутри цикла -->
+        <?php the_title() ?>
+        
+        <!--контент записи ( то что в редакторе написано )-->
+        <?php the_content()?>
+    <?php } ?>
+<?php } ?>
 
 
 
