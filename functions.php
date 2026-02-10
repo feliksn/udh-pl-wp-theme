@@ -94,34 +94,6 @@ function disable_comments_admin_menu_redirect() {
 // Register custom post types
 add_action( 'init', 'register_post_types' );
 function register_post_types(){
-	// brand
-	register_post_type( 'brand', [
-		'label'  => null,
-		'labels' => [
-			'name'               => 'Marki',
-			'singular_name'      => 'Marka',
-			'add_new'            => 'Dodaj markę',
-			'add_new_item'       => 'Dodaj markę',
-			'edit_item'          => 'Edytuj markę',
-			'new_item'           => 'Nowa marka',
-			'view_item'          => 'Oglądaj markę',
-			'search_items'       => 'Szukaj marki',
-			'not_found'          => 'Nie znaleziono',
-			'not_found_in_trash' => 'Nie znaleziono w koszu',
-			'menu_name'          => 'Marka',
-		],
-		'public'              => true,
-		'show_in_menu'        => true,
-		'show_in_admin_bar'   => false,
-		'show_in_rest'        => true,
-		'menu_position'       => 5,
-		'menu_icon'           => null,
-		'hierarchical'        => true,
-		'supports'            => array('title', 'editor', 'page-attributes'),
-		'taxonomies'          => [ 'post_tag' ],
-		'has_archive'         => false,
-		'rewrite'             => true,
-	] );
 	// product
 	register_post_type( 'product', [
 		'label'  => null,
