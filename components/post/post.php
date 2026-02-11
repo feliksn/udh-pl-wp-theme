@@ -2,7 +2,9 @@
 
     <!-- .post-image -->
     <div class="overflow-hidden">
-        <?php the_post_thumbnail('medium', array('class' => 'post-image')); ?>
+        <img src="<?php the_post_thumbnail_url('medium'); ?>"
+            class="post-image img-fluid"
+            alt="">
     </div>
 
     <div class="post-body">
