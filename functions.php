@@ -148,4 +148,11 @@ add_action('intermediate_image_sizes_advanced', 'disable_image_sizes');
 add_filter( 'big_image_size_threshold', function( $size, $imagesize, $file, $attachment_id ){
 	return 1536;
 }, 10, 4 );
+
+add_action( 'pre_get_posts' , 'add_product_to_main_query');
+function add_product_to_main_query($query){
+	if( ! is_admin() && $query->is_main_query() ){
+		$query->set( 'post_type', ['page', 'product', 'brand' ] );
+	}
+}
 ?>
