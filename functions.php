@@ -1,6 +1,8 @@
 <?php
 // Add custom functions
-require_once 'functions-custom.php';
+require_once get_template_directory() . '/require/functions-custom.php';
+# в админке -- >  внешний вид / настроить
+require_once get_template_directory() . '/require/customizer.php';
 
 // Add a menu in an admin panel
 add_theme_support("menus");

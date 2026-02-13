@@ -1,3 +1,14 @@
 .heading{
    color: var(--color-heading);
 }
+
+.heading-single{
+   min-height: 400px;
+   height: 400px;
+   width: 100%;
+   background-color: green;
+   color: yellow;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
