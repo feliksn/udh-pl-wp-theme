@@ -6,6 +6,7 @@
 
 /* components */
 @import "../components/post/post.css";
+@import "../components/block-statistics/block-statistics.css";
 
 :root{
    --color-brand: #4e7b00;
