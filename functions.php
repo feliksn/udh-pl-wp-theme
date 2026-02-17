@@ -3,6 +3,8 @@
 require_once get_template_directory() . '/require/functions-custom.php';
 # в админке -- >  внешний вид / настроить
 require_once get_template_directory() . '/require/customizer.php';
+// подклчючение post_type
+require_once get_template_directory() . '/require/cpt.php'; 
 
 // Add a menu in an admin panel
 add_theme_support("menus");
