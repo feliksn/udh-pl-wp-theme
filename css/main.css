@@ -3,6 +3,7 @@
 /* elements */
 @import "../elements/heading/heading.css";
 @import "../elements/link/link.css";
+@import "../elements/footer/footer.css";
 
 /* components */
 @import "../components/post/post.css";
