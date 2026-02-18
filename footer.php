@@ -4,6 +4,10 @@
 
     <?php get_template_part('components/block-pics-liks-brands/block-pics-liks-brands'); ?>
 
+    <?php get_template_part('components/block-newsletter-social/block-newsletter-social'); ?>
+
+    <div style="padding-top: 250px"></div>
+  
 </footer>
 <!-- Нужна база данных с записями постами метками меню -->
 <?php wp_footer(); ?>

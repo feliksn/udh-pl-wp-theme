@@ -1,0 +1,64 @@
+  .subscription-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      white-space: nowrap;
+  }
+
+  .subscription-wrapper {
+      position: relative;
+      display: inline-block;
+  }
+
+  .subscription-wrapper input {
+      padding-right: 40px;
+      background-color: rgba(0, 0, 0, 0);
+      border: 1px solid #fff;
+      color: #fff;
+      border-radius: 10px;
+      width: 320px;
+      height: 51px;
+      padding: 5px 50px 5px 20px;
+      font-size: 1em;
+  }
+
+  .subscription-wrapper input:focus {
+      outline: none;
+      border: 1px solid gray;
+      caret-color: #fff;
+  }
+
+  .subscription-wrapper input::placeholder {
+      color: #fff;
+  }
+
+  .subscription-wrapper button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      color: #fff;
+      padding: 12px;
+  }
+
+  .subscription-wrapper button:hover {
+      color: gray;
+  }
+
+  .subscription-social a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 53px;
+    height: 53px;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #777;
+    border-radius: 50%;
+  }
+
+.subscription-social a:hover{
+    border-color: #fff;
+}
