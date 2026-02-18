@@ -1,0 +1,29 @@
+.containerAllDataProducts{
+    margin-bottom: 65px;
+    padding-top: 65px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.allDataProducts-cnt{
+    font-weight: 600;
+    font-size: 8em;
+    line-height: 10rem;
+    color: #fff;
+}
+
+.allDataProducts-txt{
+    font-family: var(--ff-lb);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.3em;
+    color: #fff;
+}
+
+.allDataProducts-link a{
+    font-family: var(--ff-lb);
+    font-style: italic;
+    font-size: 1em;
+    color: var(--color-green-link);
+}

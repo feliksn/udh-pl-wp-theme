@@ -9,12 +9,16 @@
 @import "../components/post/post.css";
 @import "../components/block-product/block-product.css";
 @import "../components/block-statistics/block-statistics.css";
+@import "../components/block-statistics-footer/block-statistics-footer.css";
+@import "../components/block-pics-liks-brands/block-pics-liks-brands.css";
+
 
 :root{
    --color-brand: #4e7b00;
    --color-brand-light: #609202;
    --color-text: #646464;
    --color-heading: #313131;
+   --color-green-link: #7ea53b;
    --ff-lb: 'Libre Baskerville', serif;
    --ff-pn: 'Proxima Nova', sans-serif;
    --ff-mp: 'Myriad Pro', sans-serif;
