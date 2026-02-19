@@ -1,4 +1,4 @@
-<div class="container containerAllDataProducts">
+<div class="containerAllDataProducts">
 
     <div class="mx-4 text-center">
         <div class="allDataProducts-cnt">36</div>
