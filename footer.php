@@ -9,7 +9,9 @@
         <?php get_template_part('components/block-newsletter-social/block-newsletter-social'); ?>
 
     </div>
-  
+
+     <?php get_template_part('components/block-copyrights/block-copyrights'); ?>
+    
 </footer>
 <!-- Нужна база данных с записями постами метками меню -->
 <?php wp_footer(); ?>

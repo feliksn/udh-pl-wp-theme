@@ -12,6 +12,7 @@
 @import "../components/block-statistics-footer/block-statistics-footer.css";
 @import "../components/block-pics-liks-brands/block-pics-liks-brands.css";
 @import "../components/block-newsletter-social/block-newsletter-social.css";
+@import "../components/block-copyrights/block-copyrights.css";
 
 :root{
    --color-brand: #4e7b00;
@@ -32,4 +33,3 @@ body{
    color: var(--color-text);
    font-family: var(--ff-pn);
 }
-
