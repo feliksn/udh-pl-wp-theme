@@ -28,10 +28,10 @@ add_action('customize_register', function (WP_Customize_Manager $wp_customize) {
         'section' => 'udh-pl-wp-theme-options',
     ));
 
-    #twitter
-    $wp_customize->add_setting('udh-pl-wp-twitter');
-    $wp_customize->add_control('udh-pl-wp-twitter', array(
-        'label' => __('twitter', 'udh-pl-wp'),
+    #linkedin
+    $wp_customize->add_setting('udh-pl-wp-linkedin');
+    $wp_customize->add_control('udh-pl-wp-linkedin', array(
+        'label' => __('linkedin', 'udh-pl-wp'),
         'section' => 'udh-pl-wp-theme-options',
     ));
 
@@ -44,7 +44,7 @@ function udh_pl_wp_theme_options()
     return array(
         'mail' => get_theme_mod('udh-pl-wp-mail'),
         'facebook' => get_theme_mod('udh-pl-wp-facebook'),
-        'twitter' => get_theme_mod('udh-pl-wp-twitter'),
+        'linkedin' => get_theme_mod('udh-pl-wp-linkedin'),
         'instagram' => get_theme_mod('udh-pl-wp-instagram'),
     );
 };
