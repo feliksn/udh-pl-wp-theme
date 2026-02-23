@@ -1,7 +1,11 @@
+.heading{
+   color: var(--color-heading);
+}
+
 .link{
    color: var(--color-brand);
    text-decoration: none;
-   font-family: 'Libre Baskerville';
+   font-family: var(--ff-deco);
    font-style: italic;
 }
 
