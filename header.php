@@ -1,3 +1,9 @@
+<?php
+    $header_title = $args['header_title'] ?? '';
+    global $social_links;
+    $social_links = udh_pl_wp_theme_options();
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
