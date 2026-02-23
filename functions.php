@@ -1,10 +1,13 @@
 <?php
-// Add custom functions
-require_once get_template_directory() . '/require/functions-custom.php';
-# в админке -- >  внешний вид / настроить
-require_once get_template_directory() . '/require/customizer.php';
-// подклчючение post_type
-require_once get_template_directory() . '/require/cpt.php'; 
+// constants
+// THEME_URI - https://localhost/wp-content/...
+define('THEME_URI', get_template_directory_uri());
+// THEME_PATH - /Users/Name/Projects/site.com/site-com-wp/wp-content/... (full path on local PC)
+define('THEME_PATH' , get_template_directory());
+
+require_once THEME_PATH . '/require/functions-custom.php';
+require_once THEME_PATH . '/require/customizer.php';
+require_once THEME_PATH . '/require/cpt.php'; 
 
 // Add a menu in an admin panel
 add_theme_support("menus");
