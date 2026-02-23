@@ -1,0 +1,77 @@
+.footer{
+    background-image: url("../../images/footer-bg-default.jpg");
+    color: white;
+}
+
+.footer-numbers-num{
+    font-weight: 600;
+    font-size: 7rem;
+}
+
+.footer-numbers-text{
+    font-family: var(--ff-deco);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.3rem;
+}
+
+.footer-brand-link{
+    margin: 1rem;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-brand-logo{
+    display: block;
+    border: 1px solid white;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.footer-newsletter-label{
+    font-weight: bold;
+}
+
+.footer-newsletter-field{
+    background-color: transparent;
+    border-right: none;
+    color: white;
+    padding: .5rem 1rem;
+}
+
+.footer-newsletter-field::placeholder{
+    color: inherit;
+    font-family: var(--ff-deco);
+    font-style: italic;
+    font-size: .8rem;
+}
+
+.footer-newsletter-field,
+.footer-newsletter-submit{
+    border-color: gray;
+}
+
+.footer-newsletter-submit{
+    color: gray;
+    border-left: none;
+}
+
+.footer-social-link{
+    color: inherit;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-left: .3333em;
+}
+
+.footer-social-icon{
+    height: 1em;
+}
+
+.footer-copyrights{
+    background-color: rgba(0,0,0, .3);
+    font-size: .8rem;
+}
+
+.footer-copyrights-link{
+    color: inherit;
+}
