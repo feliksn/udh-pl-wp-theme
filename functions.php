@@ -28,7 +28,7 @@ function change_menu_item_css_classes( $classes ) {
 // Change a class for a nav link
 add_filter( 'nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 1 );
 function filter_nav_menu_link_attributes( $atts ) {
-	$atts['class'] = 'nav-link';
+	$atts['class'] = 'nav-link header-nav-link';
 	return $atts;
 }
 
