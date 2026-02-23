@@ -26,5 +26,5 @@
                 ]);
             ?>
         </div>
-
+        <h1 class="header-title"><?php echo $header_title; ?></h1>
     </header>
