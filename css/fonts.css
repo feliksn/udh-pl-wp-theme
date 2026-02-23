@@ -55,17 +55,6 @@
 
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('../fonts/Proxima_Nova/Proxima-Nova-Italic-webfont.eot') format('embedded-opentype');
-    src: url('../fonts/Proxima_Nova/Proxima-Nova-Italic-webfont.eot#iefix') format('embedded-opentype'),
-        url('../fonts/Proxima_Nova/Proxima-Nova-Italic-webfont.woff2') format('woff2'),
-        url('../fonts/Proxima_Nova/Proxima-Nova-Italic-webfont.woff') format('woff'),
-        url('../fonts/Proxima_Nova/Proxima-Nova-Italic-webfont.ttf') format('truetype'),
-        url('../fonts/Proxima_Nova/Proxima-Nova-Italic-webfont.svg#ProximaNova-Italic') format('svg');
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'Proxima Nova';
     src: url('../fonts/Proxima_Nova/Proxima-Nova-Light-webfont.eot') format('embedded-opentype');
     src: url('../fonts/Proxima_Nova/Proxima-Nova-Light-webfont.eot#iefix') format('embedded-opentype'),
         url('../fonts/Proxima_Nova/Proxima-Nova-Light-webfont.woff2') format('woff2'),
