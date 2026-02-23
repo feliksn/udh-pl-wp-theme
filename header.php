@@ -28,3 +28,26 @@
         </div>
         <h1 class="header-title"><?php echo $header_title; ?></h1>
     </header>
+    
+    <!-- bottom-links -->
+    <div class="header-bottom-links">
+        <!-- lang-switcher -->
+        <div>
+            <a class="header-lang-switcher-link active" href="#">PL</a>
+            <a class="header-lang-switcher-link" href="#">EN</a>
+        </div>
+        <!-- social links -->
+        <div>
+            <?php foreach( $social_links as $link_name => $link_value ) { ?>
+                <?php if ( ! empty( $link_value ) ) :  ?>
+                    <?php 
+                        $bi_icon_name = $link_name == 'mail' ? 'bi-envelope-fill' : 'bi-' . $link_name; 
+                        $link_value_before = $link_name == 'mail' ? 'mailto:' : '//';
+                    ?> 
+                    <a class="navbar-brand mx-2" href="<?php echo $link_value_before . $link_value; ?>">
+                        <i class="bi <?php echo $bi_icon_name; ?>"></i>
+                    </a>
+                <?php endif; ?>
+            <?php } ?>
+        </div>
+    </div>
