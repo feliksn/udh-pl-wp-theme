@@ -99,23 +99,23 @@ function disable_comments_admin_menu_redirect() {
    	}
 }
 
-
+// Limit the exceprt lenght to 100 symbols
 add_filter( 'the_excerpt', 'limit_excerpt_length' );
 function limit_excerpt_length( $post_excerpt ) {
-	// Ограничиваем длину отрывка 100 символами
 	return strlen($post_excerpt) > 100 ? substr( $post_excerpt, 0, 100 ) . '...' : $post_excerpt;
 }
+
 // фильтр, который убирает обёртку тегом <p> функцию the_excerpt()
 remove_filter('the_excerpt', 'wpautop');
 
 // Отключаем генерацию некоторых размеров изображений, которые не нужны для нашего сайта. Это поможет сэкономить место на сервере и ускорить загрузку страниц.
+add_action('intermediate_image_sizes_advanced', 'disable_image_sizes');
 function disable_image_sizes($sizes){
 	unset($sizes['medium_large']); // disable medium-large size
 	unset($sizes['1536x1536']);    // disable 2x medium-large size
 	unset($sizes['2048x2048']);    // disable 2x large size
 	return $sizes;
 }
-add_action('intermediate_image_sizes_advanced', 'disable_image_sizes');
 
 // Ограничение максимального размера изображений до 1536 пикселей.
 add_filter( 'big_image_size_threshold', function( $size, $imagesize, $file, $attachment_id ){
