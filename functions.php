@@ -46,14 +46,6 @@ function add_scripts() {
 	wp_enqueue_script('main'     , get_template_directory_uri() . '/js/main.js'                           , [], '', true);
 }
 
-// Disable comments for media files
-add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
-function filter_media_comment_status( $open, $post_id ) {
-   $post = get_post( $post_id );
-   if( $post->post_type == 'attachment' ) return false;
-   return $open;
-}
-
 // Close comments on the front-end
 add_filter('comments_open', '__return_false', 20, 2);
 add_filter('pings_open', '__return_false', 20, 2);
