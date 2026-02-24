@@ -1,0 +1,54 @@
+.brand-logo{
+    font-size: 2rem;
+    padding: 0.5em;
+    line-height: 1;
+    border: 1px solid;
+    display: block;
+    border-radius: 1em;
+    margin-bottom: .5em;
+    width: 3.75em;
+}
+
+.related-products{
+    display: flex;
+    justify-content: center;
+    height: 7rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.related-product-link{
+    text-decoration: none;
+    margin-right: 1rem;
+    padding-bottom: .5rem;
+    border-bottom: .25rem solid transparent;
+}
+
+.related-product-link.active{
+    border-bottom-color: var(--color-brand);
+}
+
+.related-product-image{
+    height: 100%;
+}
+
+.product-numbers-num {
+    font-weight: 700;
+    font-size: 5rem;
+    color: var(--color-heading);
+}
+
+.product-numbers-desc{
+    font-family: var(--ff-deco);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1;
+    color: var(--color-text);
+}
+
+@media (width <= 1199px) {
+    .product-numbers-num {
+        font-size: 4.5rem;
+    }
+}
