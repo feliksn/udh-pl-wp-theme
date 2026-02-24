@@ -1,6 +1,7 @@
 <footer class="footer helper-bg-image-cover-center">
     <div class="container">
-        <?php if(is_home()) {?> 
+        <!-- Показываем цифры только на гл. старнице. В инном другом месте это не нужно -->
+        <?php if( is_home() ) {?> 
             <!-- footer nubmers -->
             <div class="d-flex flex-wrap justify-content-around text-center py-4 border-bottom border-secondary" style="--bs-border-opacity:.25">
                 <div>
