@@ -38,7 +38,7 @@ function add_scripts() {
 	// Theme sytles
 	// BS version 5.3.3
 	wp_enqueue_style( 'bs'      , get_template_directory_uri() . '/lib/bootstrap/bootstrap.min.css'       );
-	wp_enqueue_style( 'bs-icons', get_template_directory_uri() . '/lib/bootstrap/bootstrap-icons.min.css' );
+	wp_enqueue_style( 'bs-icons', get_template_directory_uri() . '/lib/bootstrap-icons/bootstrap-icons.min.css' );
 	wp_enqueue_style( 'main'    , get_template_directory_uri() . '/css/main.css'                          );
 	// Theme scripts
 	wp_enqueue_script('jq'       , get_template_directory_uri() . '/lib/jquery/jquery-3.7.1.min.js'       , [], '', true);
