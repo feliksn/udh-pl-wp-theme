@@ -60,7 +60,10 @@
                 </div>
             </form>
             <div class="footer-social ms-auto">
-                <?php global $social_links; ?>
+                <?php 
+                    // Чтобы получить данные из глоб. переменной нужно ключ. слово  "global". После этого её можно использовать как обыную переменную
+                    global $social_links;
+                ?>
                 <?php foreach( $social_links as $link_key => $link_val ) { ?>
                     <?php if( $link_key != 'mail') {?>
                         <a class="footer-social-link" href="//<?php echo $link_val; ?>">

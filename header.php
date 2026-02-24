@@ -1,5 +1,6 @@
 <?php
     $header_title = $args['header_title'] ?? '';
+    // Определить как глоб. переменную чтобы можно было использовать в футере
     global $social_links;
     $social_links = udh_pl_wp_theme_options();
 ?>
