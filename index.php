@@ -1,6 +1,6 @@
 <?php
 	get_header();
-	_get_template_css('post');
+	_init_template_css('post');
 ?>
 
 <div class="container">
