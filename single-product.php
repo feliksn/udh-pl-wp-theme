@@ -1,13 +1,15 @@
 <?php
-    // Get single product functions on the top
+    // Включаем функции для отдельного продукта в самом начале файла, чтобы было эти функции были доступны для всего что будем писать ниже.
     _get_template_fn('single-product');
 
+    // После активац можно вызватть любую функцию из templates/single-product/single-product-fn.php и записать результат в переменную
     $related_products = _get_related_products();
     
-    // Header must be after component functions, because the header needs some data from component functions
-    get_header( null, ['header_title' => get_queried_object()->post_title] );
+    // После чего вызываем шапку сайта
+    // get_queried_object() - используем за пределами циклов if...while(have_posts())... чтобы получить данные записи
+    get_header( null, [ 'header_title' => get_queried_object()->post_title ] );
     
-    // At the end connect component styles
+    // Включаем стили для на странице отдельного продукта
     _get_template_css('single-product');
 ?>
 
