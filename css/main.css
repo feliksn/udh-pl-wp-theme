@@ -1,35 +1,16 @@
-@import "../fonts/fonts.css";
-
-/* elements */
-@import "../elements/heading/heading.css";
-@import "../elements/link/link.css";
-@import "../elements/footer/footer.css";
-
-/* components */
-@import "../components/post/post.css";
-@import "../components/block-product/block-product.css";
-@import "../components/block-statistics/block-statistics.css";
-@import "../components/block-statistics-footer/block-statistics-footer.css";
-@import "../components/block-pics-liks-brands/block-pics-liks-brands.css";
-@import "../components/block-newsletter-social/block-newsletter-social.css";
-@import "../components/block-copyrights/block-copyrights.css";
-
-:root{
-   --color-brand: #4e7b00;
-   --color-brand-light: #609202;
-   --color-text: #646464;
-   --color-heading: #313131;
-   --color-green-link: #7ea53b;
-   --ff-lb: 'Libre Baskerville', serif;
-   --ff-pn: 'Proxima Nova', sans-serif;
-   --ff-mp: 'Myriad Pro', sans-serif;
-}
+@import "./fonts.css";
+@import "./variables.css";
+@import './helpers.css';
+@import "./elements.css";
+/* parts */
+@import "../parts/header/header.css";
+@import "../parts/footer/footer.css";
 
 html{
-   font-size: 16px;
+   font-size: 16px; /* 1rem */
 }
 
 body{
    color: var(--color-text);
-   font-family: var(--ff-pn);
+   font-family: var(--ff-base);
 }
