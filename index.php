@@ -6,7 +6,7 @@
 			<?php while (have_posts()) { ?>
 				<?php the_post(); ?>
 
-				<?php get_template_part('components/post/post'); ?>
+				<?php get_template_part('templates/post/post'); ?>
 
 			<?php } ?>
 		<?php } else { ?>
