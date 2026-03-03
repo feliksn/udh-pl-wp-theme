@@ -1,0 +1,265 @@
+
+/* Hide custom fileds metabox in admin panel */
+/* If you need to see custom meta values in REST enable a support arg 'custom-fields' for a cutsom post type */
+#postcustom{
+    /* display: none; */
+}
+
+
+/* change default styles for the metabox content block  */
+.metabox-term{
+    max-width: 95%;
+}
+
+.metabox-title-term{
+    margin: .75em 0;
+    font-size: 1rem;
+}
+
+.metabox > .inside{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding: 0 !important;
+}
+
+.metabox > .postbox-header{
+    background-color: #ddd;
+}
+
+.metabox > .postbox-header-term{
+    padding:0 12px;
+}
+
+
+/* item */
+.metabox-field-container{
+    background-color: #f7f7f7;
+    padding:13px;
+}
+
+
+.metabox-field-container:nth-child(1n+2),
+.metabox-repeater-subrow:nth-child(1n+2){
+    border-top: 1px solid #ccc;
+}
+
+.metabox-field-title,
+.metabox-field-description,
+.metabox-field-scroll-box{
+    margin: 0 0 5px;
+}
+
+.metabox-field-title{
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+.metabox-field-description{
+    color: gray;
+    line-height: 1.25em;
+    font-size: .9em;
+}
+
+.metabox-field-label{
+    display: block;
+}
+
+.metabox-field-label:nth-child(1n+2){
+    margin-top: 5px;
+}
+
+.metabox-field-tooltip{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    line-height: 1em;
+    font-size: 8px;
+    text-align: center;
+    color: #ccc;
+}
+
+.metabox-field-error{
+    color: red;
+    margin: 0;
+    list-style: inside;
+}
+
+*:has(.metabox-field-tooltip){
+    position:relative;
+}
+
+.metabox-field-scroll-box{
+    overflow: auto;
+    height: 250px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.metabox-field-scroll-box >
+.metabox-field-label:has(.metabox-field:checked){
+    background-color: gainsboro;
+}
+
+.metabox-field-scroll-counter{
+    font-weight: bold;
+}
+
+
+/* field */
+.metabox-field[type=text],
+.metabox-field[type=number],
+.metabox-field[type=email],
+.metabox-field[type=url],
+.metabox-field[type=tel],
+.metabox-field[type=password],
+textarea.metabox-field,
+select.metabox-field
+{
+    width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+}
+
+.metabox-field[type=checkbox],
+.metabox-field[type=radio]{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.metabox-field[type=checkbox]:checked::before{
+    width: 1.45rem;
+}
+
+.metabox-field[type=radio]:checked::before{
+    width: .7rem;
+    height: .7rem;
+}
+
+.metabox-field::placeholder{
+    color:#aaa;
+    font-size: .9em;
+    font-style: italic;
+}
+
+.metabox-image{
+    background-color: #eee;
+}
+
+.metabox-button:focus{
+    box-shadow: none;
+}
+
+.metabox-button-upload{
+    display: block;
+    text-decoration: none;
+}
+
+.metabox-button-remove{
+    color: #b32d2e;
+}
+
+.metabox-file{
+    color: #3c434a;
+    font-size: .9em;
+}
+
+.metabox-file-icon{
+    height: 1em;
+    width: 1em;
+    font-size: 60px;
+}
+
+/* .metabox-file-name,
+.metabox-file-type{
+
+} */
+
+
+/* Order list */
+.metabox-order-list{
+    margin-top: 0;
+}
+
+.metabox-order-item{
+    padding: 10px;
+    border:1px solid gainsboro;
+    cursor:move;
+    background-color: white;
+}
+
+
+/* Repeater */
+.metabox-repeater-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.metabox-repeater-hrow{
+    text-align: left;
+}
+
+.metabox-repeater-row-template{
+    display: none !important;
+}
+
+.metabox-repeater-subrow{
+    padding: 10px;
+}
+
+.metabox-repeater-hcell >
+p:last-child{
+    margin-bottom: 0;
+}
+
+.metabox-repeater-hcell >
+.metabox-field-description{
+    font-weight: normal;
+}
+
+.metabox-repeater-hcell,
+.metabox-repeater-cell{
+    border: 1px solid #ccc;
+}
+
+.metabox-repeater-hcell:first-child,
+.metabox-repeater-hcell:last-child{
+    width: 30px;
+    box-sizing: border-box;
+}
+
+.metabox-repeater-hcell:last-child,
+.metabox-repeater-cell:last-child{
+    border: none;
+}
+
+/* use line height instead padding. After that you don't need use class to hide hcell */
+.metabox-repeater-hcell,
+.metabox-repeater-cell{
+    padding: 5px;
+}
+
+.metabox-repeater-hcell-hide-in-col{
+    padding: 0 !important;
+    border: none !important;
+}
+
+.metabox-repeater-cell:first-child,
+.metabox-repeater-cell:last-child{
+    text-align: center;
+}
+
+.metabox-repeater-cell:first-child{
+    cursor:move;
+}
+
+.metabox-repeater-controls{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.metabox-repeater-button-delete{
+    border: 1px solid red !important;
+    color: red !important;
+    font-weight: bolder
+}
