@@ -23,7 +23,7 @@
                 wp_nav_menu([
                     'container' => '',
                     'menu_id' => 'menu-list',
-                    'menu_class' => 'nav list-unstyled justify-content-center'
+                    'menu_class' => 'nav list-unstyled justify-content-center align-items-center'
                 ]);
             ?>
         </div>
