@@ -20,4 +20,6 @@
 	</div>
 </div>
 
+<?php get_template_part('templates/main-slider/main-slider') ?>
+
 <?php get_footer(); ?>
