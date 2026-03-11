@@ -6,13 +6,6 @@
 
     $values = [];
     foreach( $sub_fields as $sub_field_i => $sub_field ) {
-        // Set all field props with default values if doesn't exist specific value
-        foreach( CMB_FIELD_PROPS as $prop_name => $prop_value ){
-            if($prop_name !== 'sub_fields'){
-                $sub_fields[$sub_field_i][$prop_name] = $sub_field[$prop_name] ?? $prop_value;
-            }
-        }
-        
         // Verify fields value by wp nonce
         wp_nonce_field( $sub_field['name'] . '_nonce_action', $sub_field['name'] . '_nonce_name' );
         
@@ -29,7 +22,7 @@
 
         foreach ( $sub_field_values as $vi => $v ) {
             $sub_field['value'] = $v;
-            $values[$vi]['fields'][] = $sub_field;
+            $values[$vi]['fields'][] = $sub_field ;
         }
     }
 

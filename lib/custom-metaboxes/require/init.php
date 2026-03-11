@@ -1,10 +1,9 @@
-
 <?php
 // Add metaboxes for posts
 add_action('add_meta_boxes', 'add_custom_metaboxes');
 function add_custom_metaboxes(){
     // Get post id to separate metaboxes for posts
-    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+    $post_id =  isset($_GET['post']) ? $_GET['post'] : (isset($_POST['post_ID']) ? $_POST['post_ID'] : 0);
 
     // $metaboxes data is in metaboxes.php 
     global $metaboxes;
@@ -28,10 +27,6 @@ function add_custom_metaboxes(){
                 // Function args from last argument of the add_meta_box()
                 $fields = $args['args']['fields'];
                 foreach( $fields as $field ){
-                    // Set all field props with default values if doesn't exist specific value
-                    foreach( CMB_FIELD_PROPS as $prop_name => $prop_value ){
-                        $field[$prop_name] = $field[$prop_name] ?? $prop_value;
-                    }
                     // Get current field value from DB
                     // Add additional data for each field data
                     $field['value'] = get_post_meta( $post->ID, $field['name'], true );
@@ -56,33 +51,37 @@ function add_custom_metaboxes(){
     }
 }
 
+// $post_taxonomies = get_taxonomies( ['object_type' => ['post']])
 
-// Add metaboxes when create new category
-add_action( 'category_add_form_fields', function( $taxonomy ) {
-    global $metaboxes;
-    foreach( $metaboxes as $metabox ){
-        if( isset( $metabox['taxonomy'] ) && in_array( 'category', $metabox['taxonomy'] ) ){
-            get_template_part(CMB_DIR . '/metabox-term', null, $metabox);
+// Add metaboxes when create new brand
+add_action( 'brand_add_form_fields', 
+    function( $taxonomy ) {
+        global $metaboxes;
+        foreach( $metaboxes as $metabox ){
+            if( isset( $metabox['taxonomy'] ) && in_array( 'brand', $metabox['taxonomy'] ) ){
+                get_template_part(CMB_DIR . '/metabox-term', null, $metabox);
+            }
         }
     }
-});
+);
 
 
-// Add metaboxes to edit a category
-add_action( 'category_edit_form_fields', 'metabox_edit_term_fields', 10, 2 );
-function metabox_edit_term_fields( $term, $taxonomy ) {
-    global $metaboxes;
-    foreach( $metaboxes as $metabox ){
-        if( isset( $metabox['taxonomy'] ) && in_array( 'category', $metabox['taxonomy'] ) ){
-            $metabox['term_in_edit'] = TRUE;
-            $metabox['term'] = $term;
-            ?>
-            <tr class="form-field">
-                <th></th><td><?php get_template_part(CMB_DIR . '/metabox-term', null, $metabox); ?></td>
-            </tr>
-            <?php
+// Add metaboxes to edit a brand
+add_action( 'brand_edit_form_fields', 
+    function( $term, $taxonomy ) {
+        global $metaboxes;
+        foreach( $metaboxes as $metabox ){
+            if( isset( $metabox['taxonomy'] ) && in_array( 'brand', $metabox['taxonomy'] ) ){
+                $metabox['term_in_edit'] = TRUE;
+                $metabox['term'] = $term;
+                ?>
+                <tr class="form-field">
+                    <th></th><td><?php get_template_part(CMB_DIR . '/metabox-term', null, $metabox) ?></td>
+                </tr>
+                <?php
+            }
         }
-    }
-}
+    },
+10, 2 );
 
 ?>

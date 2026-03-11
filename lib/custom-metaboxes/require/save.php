@@ -31,7 +31,8 @@ function cmb_save_post_fields ( $post_id, $post ) {
                     
                     // Get access every sub field of the repeater
                     foreach( $metabox_field['sub_fields'] as $sub_field ){
-
+                        if( ! isset( $_POST[ $sub_field['name'] ] ) ) return;
+                        
                         // Verify nonce fields.
                         if ( ! wp_verify_nonce(
                             $_POST[ $sub_field['name'] . '_nonce_name' ],
@@ -78,8 +79,8 @@ function cmb_save_post_fields ( $post_id, $post ) {
 }
 
 // Save metabox fields in taxonomy
-add_action( 'created_category', 'cmb_save_term_fields' );
-add_action( 'edited_category' , 'cmb_save_term_fields' );
+add_action( 'created_brand', 'cmb_save_term_fields' );
+add_action( 'edited_brand' , 'cmb_save_term_fields' );
 function cmb_save_term_fields( $term_id ) {
     global $metaboxes;
     foreach( $metaboxes as $metabox ){

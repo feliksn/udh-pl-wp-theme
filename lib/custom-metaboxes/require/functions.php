@@ -1,11 +1,19 @@
 <?php
 
 function cmb_field_save( $field, $id, $is_term=false ){
+    if( ! isset( $_POST[ $field['name'] ] ) ) return;
+    
     // Verify nonce fields. If it falses don't countinue 
     if ( ! wp_verify_nonce(
         $_POST[ $field['name'] . '_nonce_name' ],
         $field['name'] . '_nonce_action' )
     ) return;
+
+    // if( $is_term ){
+    //     if ( ! wp_verify_nonce( $_POST['_wpnonce_add-tag'], 'add-tag' ) ) {
+    //         return;
+    //     }
+    // }
 
     $field_value = $_POST[ $field['name'] ];
                     
@@ -256,8 +264,8 @@ foreach( $metaboxes as $metabox ){
 }
 
 // Get a value of a post meta by a name
-function cmb_get_field( $field_name, $post_id ){
-    $id = $post_id ?? get_the_ID();
+function cmb_get_field( $field_name, $post_id=0 ){
+    $id = $post_id ?: get_the_ID();
     return get_post_meta( $id, $field_name, 1 );
 }
 

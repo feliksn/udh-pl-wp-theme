@@ -12,13 +12,16 @@ const CMB_FIELD_PROPS = [
     'label'         => '',
     'placeholder'   => '',
     'checked'       => '',
+    // textarea
     'rows'          => 3,
+    // radio, checkbox, select, order
     'options'       => [],
     'post_type'     => '',
+    // repeater
     'in_col'        => false,
     'sub_fields'    => [],
-    'term_in_edit'  => false,
     'related_field_name' => '',
+    'return_json' => false,
     'errors'        => '',
 ];
 
@@ -33,25 +36,54 @@ foreach($data as $title => $item){
     // Use the section name as a metabox name in $metaboxes
     $item['id'] = 'metabox-' . sanitize_title($title);
     $item['title'] = $title;
-    $item['post_type'] = $item['post_type'] ?? ['post', 'page'];
+    // Default value - non existent post type 
+    $item['post_type'] = $item['post_type'] ?? ['non_existent_post_type'];
+    $item['term_in_edit'] = $item['term_in_edit'] ?? FALSE;
+    $item['term'] = $item['term'] ?? '';
     $item['fields'] = $item['fields'] ?? [];
     
     if( ! empty( $item['fields'] ) ){
-        foreach( $item['fields'] as $fi => $field ){
+        
+        foreach( $item['fields'] as $field_i => $field ){
+            
+            // set all field props with default values
+            foreach( CMB_FIELD_PROPS as $prop_name => $prop_value ){
+                $item['fields'][$field_i][$prop_name] = $field[$prop_name] ?? $prop_value;
+            }
+            
+            // Check sub fields
+            if( ! empty( $item['fields'][$field_i]['sub_fields'] ) ){
+                
+                // Go to each sub field
+                foreach( $item['fields'][$field_i]['sub_fields'] as $sub_field_i => $sub_field ){
+                    
+                    // Set default props for all sub fields
+                    foreach( CMB_FIELD_PROPS as $sub_prop_name => $sub_prop_value ){
+                        
+                        // Disable sub_fields prop for sub_fields
+                        if( $sub_prop_name !== 'sub_fields'){
+                            $item['fields'][$field_i]['sub_fields'][$sub_field_i][$sub_prop_name] = 
+                                $sub_field[$sub_prop_name] ?? $sub_prop_value;
+                        }
+                    }
 
-            $field_type = $field['type'];
+                }
+
+            }
+
+            $field_type = $field['type'] ?? 'text';
             $ini_file = '<small>(' . CMB_DIR . '/metaboxes.ini</small>)';
             
             if( ! isset( $field['name'] ) ){
-                $item['fields'][$fi]['errors'] = "<li>${field_type} field name is empty! ${ini_file}</li>";
+                $item['fields'][$field_i]['errors'] = "<li>$field_type field name is empty! $ini_file</li>";
             }
             
             if(
                 ( 
-                    $field_type=='radio'
-                    || $field_type=='checkbox'
-                    || $field_type=='order'
-                    || $field_type=='select' 
+                    $field_type =='radio'
+                    || $field_type =='checkbox'
+                    || $field_type =='order'
+                    || $field_type =='select' 
                 )
                 &&
                 ( 
@@ -59,7 +91,7 @@ foreach($data as $title => $item){
                     && ! isset( $field['post_type'] )
                 )
             ){
-                $item['fields'][$fi]['errors'] .= "<li>${field_type} options are empty! Add options or post_type. ${ini_file}</li>";
+                $item['fields'][$field_i]['errors'] .= "<li>$field_type options are empty! Add options or post_type. $ini_file</li>";
             }
         }
     }
@@ -91,9 +123,7 @@ function parse_ini_file_multi($file, $process_sections = false, $scanner_mode = 
     $escape_char = "'";
     // load ini file the normal way
     $data = parse_ini_file($file, $process_sections, $scanner_mode);
-    if (!$process_sections) {
-        $data = array($data);
-    }
+    if (!$process_sections) { $data = array($data); }
     foreach ($data as $section_key => $section) {
         // loop inside the section
         foreach ($section as $key => $value) {
@@ -104,9 +134,7 @@ function parse_ini_file_multi($file, $process_sections = false, $scanner_mode = 
                     $sub_keys = explode($explode_str, $key);
                     $subs =& $data[$section_key];
                     foreach ($sub_keys as $sub_key) {
-                        if (!isset($subs[$sub_key])) {
-                            $subs[$sub_key] = [];
-                        }
+                        if (!isset($subs[$sub_key])) { $subs[$sub_key] = []; }
                         $subs =& $subs[$sub_key];
                     }
                     // set the value at the right place
@@ -123,9 +151,7 @@ function parse_ini_file_multi($file, $process_sections = false, $scanner_mode = 
             }
         }
     }
-    if (!$process_sections) {
-        $data = $data[0];
-    }
+    if (!$process_sections) { $data = $data[0]; }
     return $data;
 }
 

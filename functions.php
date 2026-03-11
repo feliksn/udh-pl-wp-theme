@@ -8,7 +8,7 @@ define('THEME_PATH' , get_template_directory());
 require_once THEME_PATH . '/require/functions-custom.php';
 require_once THEME_PATH . '/require/customizer.php';
 require_once THEME_PATH . '/require/cpt.php'; 
-// require_once THEME_PATH . '/require/custom-metaboxes/metaboxes.php';
+require_once THEME_PATH . '/lib/custom-metaboxes/metaboxes.php';
 
 // Add a menu in an admin panel
 add_theme_support("menus");

@@ -3,7 +3,6 @@
     $fields       = $args['fields'];
     $term_in_edit = $args['term_in_edit'];
     $term         = $args['term'];
-
 ?>
 
 <div class="postbox metabox metabox-term">              
