@@ -15,24 +15,3 @@ body {
    color: var(--color-text);
    font-family: var(--ff-base);
 }
-
-/* logo -link */
-#menu-item-7 > a {
-   display: inline-block;
-   /* размер иконки */
-   width: 64px;
-   height: 64px;
-   /* чтобы текст не переносился */ 
-   line-height: 64px;
-   /* скрыть текст визуально полностью */ 
-   overflow: hidden;
-   /* оставляем видимым для скринридеров */
-   text-indent: -10000px;
-   background-size: contain;
-   background-repeat: no-repeat;
-   background-position: center;
-   /* дополнительно скрыть текст */
-   color: transparent;
-   background-image: url('/wp-content/themes/udh-pl-wp-theme/images/udh-1999-logo-white.png');
-
-}
